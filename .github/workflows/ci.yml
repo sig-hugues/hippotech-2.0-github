@@ -84,7 +84,7 @@ jobs:
         if: ${{ steps.seeker-check.outputs.enabled == 'true' }}
         shell: bash
         run: |
-          echo "JAVA_TOOL_OPTIONS=-javaagent:`pwd`/seeker/seeker-agent.jar" >> $GITHUB_ENV
+          echo "JAVA_TOOL_OPTIONS=-javaagent:`pwd`/seeker/seeker-agent.jar -Dseeker.project.version=${GITHUB_SHA}" >> $GITHUB_ENV
 
       - name: Start HippoTech server for testing
         working-directory: ./java-api
