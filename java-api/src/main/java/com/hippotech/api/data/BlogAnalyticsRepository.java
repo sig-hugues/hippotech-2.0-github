@@ -31,13 +31,10 @@ public class BlogAnalyticsRepository {
             sql = "CREATE TABLE IF NOT EXISTS subscribers (ID int primary key, email varchar(500))";
             statement.execute(sql);
             log.error("Created subscriber table.");
-
-            sql = "SELECT * FROM subscribers where email = '" + email + "';";
-            statement.executeQuery(sql);
-            
+           
             sql = "INSERT INTO subscribers (ID, email) values (" + nextId.toString() + ", '" + email + "')";
             nextId++;
-            log.error(sql);
+            //log.error(sql);
             int rows = statement.executeUpdate(sql);
 
             if (rows > 0) {
