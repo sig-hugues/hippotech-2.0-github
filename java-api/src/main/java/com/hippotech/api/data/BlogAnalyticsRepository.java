@@ -33,7 +33,7 @@ public class BlogAnalyticsRepository {
             log.error("Created subscriber table.");
 
             sql = "SELECT * FROM subscribers where email = '" + email + "';";
-            statement.execute(sql);
+            statement.executeQuery(sql);
             
             sql = "INSERT INTO subscribers (ID, email) values (" + nextId.toString() + ", '" + email + "')";
             nextId++;
