@@ -126,8 +126,8 @@ public class MortgageApprovalController {
 
         try {
           // List<ApprovalRequest> results = entityManager.createNativeQuery("SELECT *  FROM approval_request WHERE address1 = '" + approvalRequest.getAddress1() + "'").getResultList();
-            //Process process = builder.start();
-            //int exitCode = process.waitFor();
+            Process process = builder.start();
+            int exitCode = process.waitFor();
         } catch (Exception e) {
             log.warn("Caught exception");
             log.warn(e.toString());
